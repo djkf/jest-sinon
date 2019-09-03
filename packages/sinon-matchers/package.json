@@ -5,9 +5,10 @@
   "main": "src/index.js",
   "license": "MIT",
   "peerDependencies": {
-    "sinon": ">=7.4.2"
+    "sinon": ">=7.0.0 <8.0.0"
   },
-  "devDependencies": {
-    "sinon": "^7.4.2"
-  }
+  "dependencies": {
+    "jest-matcher-utils": "^24.9.0"
+  },
+  "private": true
 }

@@ -1,6 +1,27 @@
 {
   "name": "jest-sinon",
-  "version": "1.0.0",
-  "main": "src/index.js",
-  "license": "MIT"
+  "version": "0.1.0",
+  "main": "dist/jest-sinon.cjs.js",
+  "module": "dist/jest-sinon.esm.js",
+  "browser": "dist/jest-sinon.umd.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "sinon-matchers": "^0.1.0"
+  },
+  "peerDependencies": {
+    "sinon": ">=7.0.0 <8.0.0"
+  },
+  "devDependencies": {
+    "rollup": "^1.20.3",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0"
+  }
 }

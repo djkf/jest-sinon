@@ -1,7 +1,7 @@
 import sinon from "sinon";
-import toBeCalledAfter from "./";
+import toBeCalledAfter from ".";
 
-expect.extend(toBeCalledAfter);
+expect.extend({ toBeCalledAfter });
 
 describe("spy.toBeCalledAfter", () => {
   const beforeSpy = sinon.spy();

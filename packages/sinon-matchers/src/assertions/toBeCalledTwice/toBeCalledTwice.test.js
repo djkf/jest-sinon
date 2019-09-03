@@ -1,7 +1,7 @@
 import sinon from "sinon";
-import toBeCalledTwice from "./";
+import toBeCalledTwice from ".";
 
-expect.extend(toBeCalledTwice);
+expect.extend({ toBeCalledTwice });
 
 describe("spy.toBeCalledTwice", () => {
   const spy = sinon.spy();
