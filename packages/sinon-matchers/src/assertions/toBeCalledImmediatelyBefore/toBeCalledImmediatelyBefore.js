@@ -2,18 +2,18 @@ import { matcherHint, printExpected, printReceived } from "jest-matcher-utils";
 import sinon from "sinon";
 
 const printPass = spy => () =>
-  matcherHint(".not.toBeCalledBefore", "sinon.spy", "sinon.spy") +
+  matcherHint(".not.toBeCalledImmediatelyBefore", "sinon.spy", "sinon.spy") +
   "\n\n" +
   `Expected spies to have ${printExpected("not been called in order")}`;
 
 const printFail = spy => () =>
-  matcherHint(".toBeCalledBefore", "sinon.spy", "sinon.spy") +
+  matcherHint(".toBeCalledImmediatelyBefore", "sinon.spy", "sinon.spy") +
   "\n\n" +
   `Expected spies to have ${printExpected("been called in order")}`;
 
 export default {
-  toBeCalledBefore: (expected, anotherSpy) => {
-    if (expected.calledBefore(anotherSpy)) {
+  toBeCalledImmediatelyBefore: (expected, anotherSpy) => {
+    if (expected.calledImmediatelyBefore(anotherSpy)) {
       return { pass: true, message: printPass(expected, anotherSpy) };
     }
 
