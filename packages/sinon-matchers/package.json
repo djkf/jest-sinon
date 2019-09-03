@@ -1,0 +1,13 @@
+{
+  "name": "sinon-matchers",
+  "version": "0.1.0",
+  "description": "test matchers for sinon",
+  "main": "src/index.js",
+  "license": "MIT",
+  "peerDependencies": {
+    "sinon": ">=7.4.2"
+  },
+  "devDependencies": {
+    "sinon": "^7.4.2"
+  }
+}
