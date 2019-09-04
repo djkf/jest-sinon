@@ -12,7 +12,6 @@ describe("spy.toBeAlwaysCalledWithNew", () => {
 
   it("should pass if always called with new", () => {
     new spy();
-    new spy();
 
     expect(spy).toBeAlwaysCalledWithNew();
   });

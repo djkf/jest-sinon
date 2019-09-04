@@ -5,13 +5,15 @@ const printPass = spy => () =>
   matcherHint(".not.toBeCalledWithNew", "sinon.spy", "") +
   "\n\n" +
   `Expected spy to have ${printExpected("not been called with new")}, ` +
-  `instead received a spy that has ${printReceived('been called with new')}`;
+  `instead received a spy that has ${printReceived("been called with new")}`;
 
 const printFail = spy => () =>
   matcherHint(".toBeCalledWithNew", "sinon.spy", "") +
   "\n\n" +
   `Expected spy to have ${printExpected("been called with new")}, ` +
-  `instead received a spy that has ${printReceived('been called')}`;
+  `instead received a spy that has ${printReceived(
+    "not been called with new"
+  )}`;
 
 export default {
   toBeCalledWithNew: expected => {

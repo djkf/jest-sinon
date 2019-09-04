@@ -26,7 +26,9 @@ describe("spy.toBeCalledImmediatelyAfter", () => {
     mediumSpy();
     afterSpy();
 
-    expect(() => expect(afterSpy).toBeCalledImmediatelyAfter(beforeSpy)).toThrow();
+    expect(() =>
+      expect(afterSpy).toBeCalledImmediatelyAfter(beforeSpy)
+    ).toThrow();
   });
 });
 
@@ -53,6 +55,8 @@ describe("spy.not.toBeCalledImmediatelyAfter", () => {
     beforeSpy();
     afterSpy();
 
-    expect(() => expect(afterSpy).not.toBeCalledImmediatelyAfter(beforeSpy)).toThrow();
+    expect(() =>
+      expect(afterSpy).not.toBeCalledImmediatelyAfter(beforeSpy)
+    ).toThrow();
   });
 });
