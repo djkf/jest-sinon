@@ -1,5 +1,5 @@
 import sinon from "sinon";
-import toBeCalledThrice from "./";
+import toBeCalledThrice from ".";
 
 expect.extend(toBeCalledThrice);
 

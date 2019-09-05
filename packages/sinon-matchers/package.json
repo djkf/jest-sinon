@@ -10,7 +10,5 @@
   "dependencies": {
     "jest-matcher-utils": "^24.9.0"
   },
-  "devDependencies": {
-    "sinon": "^7.4.2"
-  }
+  "private": true
 }

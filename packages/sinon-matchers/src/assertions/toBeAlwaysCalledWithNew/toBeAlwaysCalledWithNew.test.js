@@ -1,5 +1,6 @@
+/* eslint-disable new-cap, no-new */
 import sinon from "sinon";
-import toBeAlwaysCalledWithNew from "./";
+import toBeAlwaysCalledWithNew from ".";
 
 expect.extend(toBeAlwaysCalledWithNew);
 

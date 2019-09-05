@@ -1,11 +1,11 @@
 import sinon from "sinon";
-import toBeCalledWithMatch from "./";
+import toBeCalledWithMatch from ".";
 
 expect.extend(toBeCalledWithMatch);
 
 const foo = {
   bar: 42,
-  xy: 'zzy'
+  xy: "zzy"
 };
 
 describe("spy.toBeCalledWithMatch", () => {

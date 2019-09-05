@@ -1,9 +1,7 @@
 import { matcherHint, printExpected, printReceived } from "jest-matcher-utils";
-import sinon from "sinon";
 
-const printPass = spy => () =>
-  matcherHint(".not.toBeAlwaysCalledWithExactly", "sinon.spy", "") +
-  "\n\n" +
+const printPass = () => () =>
+  `${matcherHint(".not.toBeAlwaysCalledWithExactly", "sinon.spy", "")}\n\n` +
   `Expected spy to have ${printExpected(
     "not been called with correct arguments"
   )}, ` +
@@ -11,9 +9,8 @@ const printPass = spy => () =>
     "been called with correct arguments"
   )}`;
 
-const printFail = spy => () =>
-  matcherHint(".toBeAlwaysCalledWithExactly", "sinon.spy", "") +
-  "\n\n" +
+const printFail = () => () =>
+  `${matcherHint(".toBeAlwaysCalledWithExactly", "sinon.spy", "")}\n\n` +
   `Expected spy to have ${printExpected(
     "been called with correct arguments"
   )}, ` +
@@ -24,9 +21,9 @@ const printFail = spy => () =>
 export default {
   toBeAlwaysCalledWithExactly: (expected, ...rest) => {
     if (expected.alwaysCalledWithExactly(...rest)) {
-      return { pass: true, message: printPass(expected) };
+      return { pass: true, message: printPass() };
     }
 
-    return { pass: false, message: printFail(expected) };
+    return { pass: false, message: printFail() };
   }
 };

@@ -1,5 +1,5 @@
 import sinon from "sinon";
-import toBeAlwaysCalledOn from "./";
+import toBeAlwaysCalledOn from ".";
 
 expect.extend(toBeAlwaysCalledOn);
 

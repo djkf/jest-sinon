@@ -1,5 +1,5 @@
 import sinon from "sinon";
-import toHaveCallCount from "./";
+import toHaveCallCount from ".";
 
 expect.extend(toHaveCallCount);
 

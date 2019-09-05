@@ -1,16 +1,16 @@
 import sinon from "sinon";
-import toBeAlwaysCalledWithMatch from "./";
+import toBeAlwaysCalledWithMatch from ".";
 
 expect.extend(toBeAlwaysCalledWithMatch);
 
 const foo = {
   bar: 42,
-  xy: 'zzy'
+  xy: "zzy"
 };
 
 const bar = {
   foo: 24,
-  zzy: 'yx'
+  zzy: "yx"
 };
 
 describe("spy.toBeAlwaysCalledWithMatch", () => {
@@ -29,7 +29,7 @@ describe("spy.toBeAlwaysCalledWithMatch", () => {
 
   it("should fail if not always called with matching argument", () => {
     spy(foo);
-    spy(bar)
+    spy(bar);
 
     expect(() => expect(spy).toBeAlwaysCalledWithMatch({ bar: 42 })).toThrow();
   });
@@ -52,6 +52,8 @@ describe("spy.not.toBeAlwaysCalledWithMatch", () => {
   it("should fail if called with matching argument", () => {
     spy(foo);
 
-    expect(() => expect(spy).not.toBeAlwaysCalledWithMatch({ bar: 42 })).toThrow();
+    expect(() =>
+      expect(spy).not.toBeAlwaysCalledWithMatch({ bar: 42 })
+    ).toThrow();
   });
 });

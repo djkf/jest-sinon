@@ -4,14 +4,41 @@
   "description": "Jest assertions for sinon",
   "author": "djkf <fox.darrel@googlemail.com>",
   "license": "MIT",
+  "scripts": {
+    "test": "jest --coverage",
+    "lint": "eslint ."
+  },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "babel-jest": "^24.9.0",
+    "eslint": "^6.3.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.2.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.17.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "husky": ">=1",
     "jest": "^24.9.0",
-    "lerna": "^2.1.2",
-    "prettier": "1.18.2"
+    "lerna": "2.1.2",
+    "lint-staged": ">=8",
+    "prettier": "1.18.2",
+    "sinon": "^7.4.2"
   },
-  "private": true
+  "private": true,
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,css,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }

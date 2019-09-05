@@ -1,5 +1,5 @@
 import sinon from "sinon";
-import toBeCalledOnceWithExactly from "./";
+import toBeCalledOnceWithExactly from ".";
 
 expect.extend(toBeCalledOnceWithExactly);
 
