@@ -10,12 +10,8 @@ const printFail = () => () =>
   `Expected spy to have ${printExpected("been called on obj")}, ` +
   `instead received a spy that has ${printReceived("been called on obj")}`;
 
-export default {
-  toBeCalledOn: (expected, obj) => {
-    if (expected.calledOn(obj)) {
-      return { pass: true, message: printPass(expected) };
-    }
-
-    return { pass: false, message: printFail(expected) };
-  }
+export default (expected, obj) => {
+  return expected.calledOn(obj)
+    ? { pass: true, message: printPass(expected) }
+    : { pass: false, message: printFail(expected) };
 };

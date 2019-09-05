@@ -14,12 +14,8 @@ const printFail = (expected, actual) => () =>
     actual.callCount
   )} time(s)`;
 
-export default {
-  toHaveCallCount: (actual, expected) => {
-    if (expected === actual.callCount) {
-      return { pass: true, message: printPass(expected, actual) };
-    }
-
-    return { pass: false, message: printFail(expected, actual) };
-  }
+export default (actual, expected) => {
+  return expected === actual.callCount
+    ? { pass: true, message: printPass(expected, actual) }
+    : { pass: false, message: printFail(expected, actual) };
 };

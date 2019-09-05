@@ -18,12 +18,8 @@ const printFail = () => () =>
     "not been called with correct arguments"
   )}`;
 
-export default {
-  toBeCalledWithMatch: (expected, ...rest) => {
-    if (expected.calledWithMatch(...rest)) {
-      return { pass: true, message: printPass() };
-    }
-
-    return { pass: false, message: printFail() };
-  }
+export default (expected, ...rest) => {
+  return expected.calledWithMatch(...rest)
+    ? { pass: true, message: printPass() }
+    : { pass: false, message: printFail() };
 };

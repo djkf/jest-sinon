@@ -12,12 +12,8 @@ const printFail = () => () =>
     "not been called with new"
   )}`;
 
-export default {
-  toBeCalledWithNew: expected => {
-    if (expected.calledWithNew()) {
-      return { pass: true, message: printPass() };
-    }
-
-    return { pass: false, message: printFail() };
-  }
+export default expected => {
+  return expected.calledWithNew()
+    ? { pass: true, message: printPass() }
+    : { pass: false, message: printFail() };
 };

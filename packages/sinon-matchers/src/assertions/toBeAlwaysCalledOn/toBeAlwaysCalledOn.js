@@ -14,10 +14,8 @@ const printFail = () => () =>
     "not always been called on obj"
   )}`;
 
-export default {
-  toBeAlwaysCalledOn: (expected, obj) => {
-    return expected.alwaysCalledOn(obj)
-      ? { pass: true, message: printPass() }
-      : { pass: false, message: printFail() };
-  }
+export default (expected, obj) => {
+  return expected.alwaysCalledOn(obj)
+    ? { pass: true, message: printPass() }
+    : { pass: false, message: printFail() };
 };

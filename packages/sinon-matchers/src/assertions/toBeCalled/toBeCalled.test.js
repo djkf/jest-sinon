@@ -1,7 +1,7 @@
 import sinon from "sinon";
 import toBeCalled from ".";
 
-expect.extend(toBeCalled);
+expect.extend({ toBeCalled });
 
 ["stub", "mock", "spy"].forEach(type => {
   describe(`${type}.toBeCalled`, () => {

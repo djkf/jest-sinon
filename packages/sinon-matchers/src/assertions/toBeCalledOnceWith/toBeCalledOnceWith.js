@@ -18,12 +18,8 @@ const printFail = () => () =>
     "not been called with correct arguments"
   )}`;
 
-export default {
-  toBeCalledOnceWith: (expected, ...rest) => {
-    if (expected.calledOnceWith(...rest)) {
-      return { pass: true, message: printPass() };
-    }
-
-    return { pass: false, message: printFail() };
-  }
+export default (expected, ...rest) => {
+  return expected.calledOnceWith(...rest)
+    ? { pass: true, message: printPass() }
+    : { pass: false, message: printFail() };
 };

@@ -8,12 +8,8 @@ const printFail = () => () =>
   `${matcherHint(".toBeCalledBefore", "sinon.spy", "sinon.spy")}\n\n` +
   `Expected spies to have ${printExpected("been called in order")}`;
 
-export default {
-  toBeCalledBefore: (expected, anotherSpy) => {
-    if (expected.calledBefore(anotherSpy)) {
-      return { pass: true, message: printPass() };
-    }
-
-    return { pass: false, message: printFail() };
-  }
+export default (expected, anotherSpy) => {
+  return expected.calledBefore(anotherSpy)
+    ? { pass: true, message: printPass() }
+    : { pass: false, message: printFail() };
 };

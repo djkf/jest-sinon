@@ -14,12 +14,8 @@ const printFail = spy => () =>
     spy.callCount
   )} time(s)`;
 
-export default {
-  toBeCalledThrice: expected => {
-    if (expected.calledThrice) {
-      return { pass: true, message: printPass(expected) };
-    }
-
-    return { pass: false, message: printFail(expected) };
-  }
+export default expected => {
+  return expected.calledThrice
+    ? { pass: true, message: printPass(expected) }
+    : { pass: false, message: printFail(expected) };
 };

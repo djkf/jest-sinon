@@ -1,7 +1,7 @@
 import sinon from "sinon";
 import toBeCalledThrice from ".";
 
-expect.extend(toBeCalledThrice);
+expect.extend({ toBeCalledThrice });
 
 describe("spy.toBeCalledThrice", () => {
   const spy = sinon.spy();

@@ -2,7 +2,7 @@
 import sinon from "sinon";
 import toBeCalledWithNew from ".";
 
-expect.extend(toBeCalledWithNew);
+expect.extend({ toBeCalledWithNew });
 
 describe("spy.toBeCalledWithNew", () => {
   const spy = sinon.spy();

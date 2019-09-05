@@ -14,12 +14,8 @@ const printFail = () => () =>
     "not always been called with new"
   )}`;
 
-export default {
-  toBeAlwaysCalledWithNew: expected => {
-    if (expected.alwaysCalledWithNew()) {
-      return { pass: true, message: printPass() };
-    }
-
-    return { pass: false, message: printFail() };
-  }
+export default expected => {
+  return expected.alwaysCalledWithNew()
+    ? { pass: true, message: printPass() }
+    : { pass: false, message: printFail() };
 };

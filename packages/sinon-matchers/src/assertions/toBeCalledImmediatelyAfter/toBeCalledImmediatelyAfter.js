@@ -14,12 +14,8 @@ const printFail = () => () =>
     "sinon.spy"
   )}\n\n Expected spies to have ${printExpected("been called in order")}`;
 
-export default {
-  toBeCalledImmediatelyAfter: (expected, anotherSpy) => {
-    if (expected.calledImmediatelyAfter(anotherSpy)) {
-      return { pass: true, message: printPass() };
-    }
-
-    return { pass: false, message: printFail() };
-  }
+export default (expected, anotherSpy) => {
+  return expected.calledImmediatelyAfter(anotherSpy)
+    ? { pass: true, message: printPass() }
+    : { pass: false, message: printFail() };
 };

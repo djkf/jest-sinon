@@ -1,7 +1,7 @@
 import sinon from "sinon";
 import toBeAlwaysCalledWith from ".";
 
-expect.extend(toBeAlwaysCalledWith);
+expect.extend({ toBeAlwaysCalledWith });
 
 const [a, b, c] = ["a", "b", "c"];
 
