@@ -1,7 +1,29 @@
 language: node_js
 node_js:
-  - "node"
-install: "yarn install --ignore-engines"
+- '10'
+branches:
+  only:
+  - master
+cache:
+  yarn: true
+  directories:
+  - node_modules
+install:
+- yarn install --ignore-engines
 script:
-  - yarn run lint
-  - yarn test
+- yarn run lint
+- yarn test
+- yarn publish
+
+jobs:
+  include:
+  - stage: Release
+    if: branch = master
+    before_deploy:
+    - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ".npmrc"
+    deploy:
+      provider: script
+      skip_cleanup: true
+      script: lerna publish -y
+      on:
+        tags: true
