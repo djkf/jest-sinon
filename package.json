@@ -6,13 +6,15 @@
   "license": "MIT",
   "scripts": {
     "test": "jest --coverage",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "commit": "git-cz"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "babel-jest": "^24.9.0",
+    "cz-conventional-changelog": "^3.0.2",
     "eslint": "^6.3.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-config-prettier": "^6.2.0",
@@ -40,5 +42,10 @@
   },
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }

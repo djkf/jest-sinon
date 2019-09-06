@@ -15,6 +15,9 @@
   "dependencies": {
     "sinon-matchers": "0.1.0"
   },
+  "peerDependencies": {
+    "sinon": ">=7.0.0 <8.0.0"
+  },
   "devDependencies": {
     "rollup": "^1.20.3",
     "rollup-plugin-babel": "^4.3.3",
