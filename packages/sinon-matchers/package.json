@@ -1,6 +1,6 @@
 {
   "name": "sinon-matchers",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "test matchers for sinon",
   "main": "src/index.js",
   "license": "MIT",
