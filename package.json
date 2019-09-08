@@ -7,8 +7,7 @@
   "scripts": {
     "test": "jest --coverage",
     "lint": "eslint .",
-    "commit": "git-cz",
-    "build": "lerna run build"
+    "commit": "git-cz"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
