@@ -15,8 +15,8 @@ export default [
   },
   {
     input: "src/index.js",
-    external: ["sinon"],
-    plugins: [resolve(), commonjs(), babel()],
+    external: ["jest-matcher-utils"],
+    plugins: [resolve(), babel()],
     output: [
       { file: pkg.main, format: "cjs" },
       { file: pkg.module, format: "es" }

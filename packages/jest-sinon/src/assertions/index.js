@@ -1,81 +1,85 @@
 export {
   default as toBeAlwaysCalledOn,
   default as toHaveBeenAlwaysCalledOn
-} from "./assertions/toBeAlwaysCalledOn";
+} from "./toBeAlwaysCalledOn";
 export {
   default as toBeAlwaysCalledWith,
   default as toHaveBeenAlwaysCalledWith
-} from "./assertions/toBeAlwaysCalledWith";
+} from "./toBeAlwaysCalledWith";
 export {
   default as toBeAlwaysCalledWithExactly,
   default as toHaveBeenAlwaysCalledWithExactly
-} from "./assertions/toBeAlwaysCalledWithExactly";
+} from "./toBeAlwaysCalledWithExactly";
 export {
   default as toBeAlwaysCalledWithMatch,
   default as toHaveBeenAlwaysCalledWithMatch
-} from "./assertions/toBeAlwaysCalledWithMatch";
+} from "./toBeAlwaysCalledWithMatch";
 export {
   default as toBeAlwaysCalledWithNew,
   default as toHaveBeenAlwaysCalledWithNew
-} from "./assertions/toBeAlwaysCalledWithNew";
+} from "./toBeAlwaysCalledWithNew";
 export {
   default as toBeCalled,
   default as toHaveBeenCalled
-} from "./assertions/toBeCalled";
+} from "./toBeCalled";
 export {
   default as toBeCalledAfter,
   default as toHaveBeenCalledAfter
-} from "./assertions/toBeCalledAfter";
+} from "./toBeCalledAfter";
 export {
   default as toBeCalledBefore,
   default as toHaveBeenCalledBefore
-} from "./assertions/toBeCalledBefore";
+} from "./toBeCalledBefore";
 export {
   default as toHaveBeenCalledImmediatelyAfter,
   default as toBeCalledImmediatelyAfter
-} from "./assertions/toBeCalledImmediatelyAfter";
+} from "./toBeCalledImmediatelyAfter";
 export {
   default as toBeCalledImmediatelyBefore,
   default as toHaveBeenCalledImmediatelyBefore
-} from "./assertions/toBeCalledImmediatelyBefore";
+} from "./toBeCalledImmediatelyBefore";
 export {
   default as toBeCalledOn,
   default as toHaveBeenCalledOn
-} from "./assertions/toBeCalledOn";
+} from "./toBeCalledOn";
 export {
   default as toBeCalledOnce,
   default as toHaveBeenCalledOnce
-} from "./assertions/toBeCalledOnce";
+} from "./toBeCalledOnce";
 export {
   default as toBeCalledOnceWith,
   default as toHaveBeenCalledOnceWith
-} from "./assertions/toBeCalledOnceWith";
+} from "./toBeCalledOnceWith";
 export {
   default as toBeCalledOnceWithExactly,
   default as toHaveBeenCalledOnceWithExactly
-} from "./assertions/toBeCalledOnceWithExactly";
+} from "./toBeCalledOnceWithExactly";
 export {
   default as toBeCalledThrice,
   default as toHaveBeenCalledThrice
-} from "./assertions/toBeCalledThrice";
+} from "./toBeCalledThrice";
 export {
   default as toBeCalledTwice,
   default as toHaveBeenCalledTwice
-} from "./assertions/toBeCalledTwice";
+} from "./toBeCalledTwice";
 export {
   default as toBeCalledWith,
   default as toHaveBeenCalledWith
-} from "./assertions/toBeCalledWith";
+} from "./toBeCalledWith";
 export {
   default as toBeCalledWithExactly,
   default as toHaveBeenCalledWithExactly
-} from "./assertions/toBeCalledWithExactly";
+} from "./toBeCalledWithExactly";
 export {
   default as toBeCalledWithMatch,
   default as toHaveBeenCalledWithMatch
-} from "./assertions/toBeCalledWithMatch";
+} from "./toBeCalledWithMatch";
 export {
   default as toBeCalledWithNew,
   default as toHaveBeenCalledWithNew
-} from "./assertions/toBeCalledWithNew";
-export { default as toHaveCallCount } from "./assertions/toHaveCallCount";
+} from "./toBeCalledWithNew";
+export {
+  default as toHaveCallCount,
+  default as toHaveBeenCalledTimes,
+  default as toBeCalledTimes
+} from "./toHaveCallCount";

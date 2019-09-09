@@ -12,11 +12,11 @@
   "files": [
     "dist"
   ],
-  "dependencies": {
-    "sinon-matchers": "^0.2.0"
-  },
   "peerDependencies": {
     "sinon": ">=7.0.0 <8.0.0"
+  },
+  "dependencies": {
+    "jest-matcher-utils": "^24.9.0"
   },
   "devDependencies": {
     "rollup": "^1.20.3",
