@@ -83,3 +83,13 @@ export {
   default as toHaveBeenCalledTimes,
   default as toBeCalledTimes
 } from "./toHaveCallCount";
+export {
+  default as toHaveReturnedWith,
+  default as toReturnWith,
+  default as toHaveReturned,
+  default as toReturn
+} from "./toHaveReturnedWith";
+export {
+  default as toHaveAlwaysReturnedWith,
+  default as toAlwaysReturnWith
+} from "./toHaveAlwaysReturnedWith";

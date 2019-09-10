@@ -156,7 +156,15 @@ require("jest-sinon");
 
 #### `.toHaveCallCount(number)`
 
-> Also under the alias: `.toBeCalledWithNew()`, `.toHaveBeenCalledTimes()` and `.toBeCalledTimes()`
+> Also under the alias: `.toHaveBeenCalledTimes()` and `.toBeCalledTimes()`
+
+#### `.toHaveReturnedWith(obj)`
+
+> Also under the alias: `.toReturnWith()`, `.toHaveReturned()` and `.toReturn()`
+
+#### `.toHaveAlwaysReturnedWith(obj)`
+
+> Also under the alias: `.toAlwaysReturnWith()`
 
 For more information about what these do, you can visit [Sinon.js](https://sinonjs.org/).
 
