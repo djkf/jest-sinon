@@ -15,8 +15,8 @@ export default [
   },
   {
     input: "src/index.js",
-    external: ["jest-matcher-utils"],
-    plugins: [resolve(), babel()],
+    external: ["jest-matcher-utils", "expect"],
+    plugins: [resolve(), commonjs(), babel()],
     output: [
       { file: pkg.main, format: "cjs" },
       { file: pkg.module, format: "es" }

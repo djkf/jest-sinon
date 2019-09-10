@@ -3,6 +3,24 @@ import toBeCalled from ".";
 
 expect.extend({ toBeCalled });
 
+describe(`jest.fn().toBeCalled`, () => {
+  it(`should pass if passed a called jest.fn()`, () => {
+    const jestSpy = jest.fn();
+
+    jestSpy();
+
+    expect(jestSpy).toBeCalled();
+  });
+});
+
+describe(`jest.fn().not.toBeCalled`, () => {
+  it(`should pass if passed a called jest.fn()`, () => {
+    const jestSpy = jest.fn();
+
+    expect(jestSpy).not.toBeCalled();
+  });
+});
+
 ["stub", "mock", "spy"].forEach(type => {
   describe(`${type}.toBeCalled`, () => {
     const spy = sinon[type]();

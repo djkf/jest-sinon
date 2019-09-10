@@ -23,6 +23,14 @@ describe("spy.toHaveCallCount", () => {
 
     expect(() => expect(spy).toHaveCallCount(3)).toThrow();
   });
+
+  it("should work if called the correct number of times with jest mocking", () => {
+    const jestSpy = jest.fn();
+
+    jestSpy();
+
+    expect(jestSpy).toHaveCallCount(1);
+  });
 });
 
 describe("spy.not.toHaveCallCount", () => {
@@ -44,5 +52,14 @@ describe("spy.not.toHaveCallCount", () => {
     spy();
 
     expect(() => expect(spy).not.toHaveCallCount(2)).toThrow();
+  });
+
+  it("should pass if called the incorrect number of times with jest mocking", () => {
+    const jestSpy = jest.fn();
+
+    jestSpy();
+    jestSpy();
+
+    expect(jestSpy).not.toHaveCallCount(1);
   });
 });

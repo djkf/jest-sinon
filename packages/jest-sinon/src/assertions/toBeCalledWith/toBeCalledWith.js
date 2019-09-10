@@ -1,4 +1,5 @@
 import { matcherHint, printExpected, printReceived } from "jest-matcher-utils";
+import spyMatchers from "expect/build/spyMatchers";
 
 const printPass = () => () =>
   `${matcherHint(".not.toBeCalledWith", "sinon.spy", "")}\n\n` +
@@ -19,6 +20,10 @@ const printFail = () => () =>
   )}`;
 
 export default (expected, ...rest) => {
+  if (jest.isMockFunction(expected)) {
+    return spyMatchers.toHaveBeenCalledWith(expected, ...rest);
+  }
+
   return expected.calledWith(...rest)
     ? { pass: true, message: printPass() }
     : { pass: false, message: printFail() };

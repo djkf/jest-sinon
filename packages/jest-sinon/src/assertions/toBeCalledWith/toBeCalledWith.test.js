@@ -18,6 +18,14 @@ describe("spy.toBeCalledWith", () => {
     expect(spy).toBeCalledWith(a, b, c);
   });
 
+  it("should pass if called with correct args with jest mocking", () => {
+    const jestSpy = jest.fn();
+
+    jestSpy(a, b, c);
+
+    expect(jestSpy).toBeCalledWith(a, b, c);
+  });
+
   it("should fail if not called with correct args", () => {
     spy(a);
 
@@ -36,6 +44,14 @@ describe("spy.not.toBeCalledWith", () => {
     spy(a);
 
     expect(spy).not.toBeCalledWith(a, b, c);
+  });
+
+  it("should pass if not called with correct args with jest mocking", () => {
+    const jestSpy = jest.fn();
+
+    jestSpy(a);
+
+    expect(jestSpy).not.toBeCalledWith(a, b, c);
   });
 
   it("should fail if called with correct args", () => {

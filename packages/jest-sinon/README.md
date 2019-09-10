@@ -1,21 +1,34 @@
 # Jest-Sinon
 
-Jest-Sinon is a collection of assertions for using the mocking library [Sinon.js](https://sinonjs.org/) with [Jest](https://jestjs.io/).
+Jest-Sinon is a collection of assertions for using the mocking library Sinon.js with Jest.
 
-An Example
+### Example
 
 ```js
-const foo = () => {};
-const bar = sinon.spy();
+const bar = () => {};
+const foo = sinon.spy();
+
+foo(bar);
 
 // instead of:
-expect(bar).calledWith(foo)).toBeTruthy;
+expect(foo).calledWith(bar)).toBeTruthy;
 
 // we can write:
-expect(bar)).toHaveBeenCalledWith(foo);
+expect(foo)).toHaveBeenCalledWith(bar);
 ```
 
-> **Warning!** Using this library will **OVERRIDE** some of the in-built Jest mocking assertions. Work is being done in a later version to help mitigate this.
+The assertions: `toHaveBeenCalledTimes`, `toHaveBeenCalled` and `toHaveBeenCalledWith` clash with the in-built `Jest` mocking framework. `Jest-Sinon` will try and detect which type of spy is being used and use the correct assertion. You should be able to use both mocking libraries in parallel.
+
+```js
+const foo = sinon.spy();
+const bar = jest.fn();
+
+foo();
+bar();
+
+expect(foo).toHaveBeenCalled(); // true
+expect(bar).toHaveBeenCalled(); // true
+```
 
 ## Installation
 
@@ -59,21 +72,21 @@ require("jest-sinon");
 
 ## Usage
 
-Jest-Sinon adds a number of assertions to help test Sinon Spies, Mocks and Stubs. Below is a list of currently implemented assertions.
+`Jest-Sinon` adds a number of assertions to help test `Sinon.js` Spies, Mocks and Stubs. Below is a list of currently implemented assertions.
 
-#### `.toHaveBeenAlwaysCalledOn()`
+#### `.toHaveBeenAlwaysCalledOn(obj)`
 
 > Also under the alias: `.toBeAlwaysCalledOn()`
 
-#### `.toHaveBeenAlwaysCalledWith()`
+#### `.toHaveBeenAlwaysCalledWith(args1, arg2, ...)`
 
 > Also under the alias: `.toBenAlwaysCalledWith()`
 
-#### `.toHaveBeenAlwaysCalledWithExactly()`
+#### `.toHaveBeenAlwaysCalledWithExactly(args1, arg2, ...)`
 
 > Also under the alias: `.toBeAlwaysCalledWithExactly()`
 
-#### `.toHaveBeenAlwaysCalledWithMatch()`
+#### `.toHaveBeenAlwaysCalledWithMatch(arg1, arg2, ...)`
 
 > Also under the alias: `.toBeAlwaysCalledWithMatch()`
 
@@ -85,23 +98,23 @@ Jest-Sinon adds a number of assertions to help test Sinon Spies, Mocks and Stubs
 
 > Also under the alias: `.toBeCalled()`
 
-#### `.toHaveBeenCalledAfter()`
+#### `.toHaveBeenCalledAfter(anotherSpy)`
 
 > Also under the alias: `.toBeCalledAfter()`
 
-#### `.toHaveBeenCalledBefore()`
+#### `.toHaveBeenCalledBefore(anotherSpy)`
 
 > Also under the alias: `.toBeCalledBefore()`
 
-#### `.toHaveBeenCalledImmediatelyAfter()`
+#### `.toHaveBeenCalledImmediatelyAfter(anotherSpy)`
 
 > Also under the alias: `.toBeCalledImmediatelyAfter()`
 
-#### `.toHaveBeenCalledImmediatelyBefore()`
+#### `.toHaveBeenCalledImmediatelyBefore(anotherSpy)`
 
 > Also under the alias: `.toBeCalledImmediatelyBefore()`
 
-#### `.toHaveBeenCalledOn()`
+#### `.toHaveBeenCalledOn(obj)`
 
 > Also under the alias: `.toBeCalledOn()`
 
@@ -109,11 +122,11 @@ Jest-Sinon adds a number of assertions to help test Sinon Spies, Mocks and Stubs
 
 > Also under the alias: `.toBeCalledOnce()`
 
-#### `.toHaveBeenCalledOnceWith()`
+#### `.toHaveBeenCalledOnceWith(arg1, arg2, ...)`
 
 > Also under the alias: `.toBeCalledOnceWith()`
 
-#### `.toHaveBeenCalledOnceWithExactly()`
+#### `.toHaveBeenCalledOnceWithExactly(arg1, arg2, ...)`
 
 > Also under the alias: `.toBeCalledOnceWithExactly()`
 
@@ -125,15 +138,15 @@ Jest-Sinon adds a number of assertions to help test Sinon Spies, Mocks and Stubs
 
 > Also under the alias: `.toBeCalledTwice()`
 
-#### `.toHaveBeenCalledWith()`
+#### `.toHaveBeenCalledWith(arg1, arg2, ...)`
 
 > Also under the alias: `.toBeCalledWith()`
 
-#### `.toHaveBeenCalledWithExactly()`
+#### `.toHaveBeenCalledWithExactly(arg1, arg2, ...)`
 
 > Also under the alias: `.toBeCalledWithExactly()`
 
-#### `.toHaveBeenCalledWithMatch()`
+#### `.toHaveBeenCalledWithMatch(arg1, arg2, ...)`
 
 > Also under the alias: `.toBeCalledWithMatch()`
 
@@ -141,7 +154,7 @@ Jest-Sinon adds a number of assertions to help test Sinon Spies, Mocks and Stubs
 
 > Also under the alias: `.toBeCalledWithNew()`
 
-#### `.toHaveCallCount()`
+#### `.toHaveCallCount(number)`
 
 > Also under the alias: `.toBeCalledWithNew()`, `.toHaveBeenCalledTimes()` and `.toBeCalledTimes()`
 
