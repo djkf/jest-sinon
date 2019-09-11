@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/djkf/jest-sinon.svg?branch=master)](https://travis-ci.com/djkf/jest-sinon)
+
 # Jest-Sinon
 
 Jest-Sinon is a collection of assertions for using the mocking library Sinon.js with Jest.
@@ -11,13 +13,13 @@ const foo = sinon.spy();
 foo(bar);
 
 // instead of:
-expect(foo).calledWith(bar)).toBeTruthy;
+expect(foo.calledWith(bar)).toBeTruthy;
 
 // we can write:
-expect(foo)).toHaveBeenCalledWith(bar);
+expect(foo).toHaveBeenCalledWith(bar);
 ```
 
-The assertions: `toHaveBeenCalledTimes`, `toHaveBeenCalled` and `toHaveBeenCalledWith` clash with the in-built `Jest` mocking framework. `Jest-Sinon` will try and detect which type of spy is being used and use the correct assertion. You should be able to use both mocking libraries in parallel.
+The assertions: `toHaveBeenCalledTimes`, `toThrow`, `toReturnWith`, `toHaveBeenCalled` and `toHaveBeenCalledWith` clash with the in-built `Jest` mocking framework. `Jest-Sinon` will try and detect which type of spy is being used and use the correct assertion. You should be able to use both mocking libraries in parallel.
 
 ```js
 const foo = sinon.spy();
@@ -29,6 +31,16 @@ bar();
 expect(foo).toHaveBeenCalled(); // true
 expect(bar).toHaveBeenCalled(); // true
 ```
+
+## Why?
+
+There are a number of reasons why you might want to use `Sinon.js` instead of (or as well as) the in-built mocking assertions. Some of the use cases include:
+
+- Developer preference/familiarity to Sinon.js
+- Migrating a code base from Mocha/Chai/Sinon to Jest
+- To be _difficult_
+
+Ultimately, it usually comes down to your own preferences and needs.
 
 ## Installation
 
@@ -48,7 +60,7 @@ yarn add -D jest-sinon
 
 ### Jest 24+
 
-Add jest-sinon to your Jest `setupFilesAfterEnv` configuration.
+Add `Jest-Sinon` to your Jest `setupFilesAfterEnv` configuration.
 
 ```json
 "jest": {
@@ -156,7 +168,23 @@ require("jest-sinon");
 
 #### `.toHaveCallCount(number)`
 
-> Also under the alias: `.toBeCalledWithNew()`, `.toHaveBeenCalledTimes()` and `.toBeCalledTimes()`
+> Also under the alias: `.toHaveBeenCalledTimes()` and `.toBeCalledTimes()`
+
+#### `.toHaveReturnedWith(obj)`
+
+> Also under the alias: `.toReturnWith()`, `.toHaveReturned()` and `.toReturn()`
+
+#### `.toHaveAlwaysReturnedWith(obj)`
+
+> Also under the alias: `.toAlwaysReturnWith()`
+
+#### `.toHaveThrown(error?)`
+
+> Also under the alias: `.toHaveThrownError()`, `.toThrow()`, and `.toThrowError()`
+
+#### `.toHaveAlwaysThrown(error?)`
+
+> Also under the alias: `.toHaveAlwaysThrownError()`, `.toAlwaysThrow()` and `.toAlwaysThrowError()`
 
 For more information about what these do, you can visit [Sinon.js](https://sinonjs.org/).
 
