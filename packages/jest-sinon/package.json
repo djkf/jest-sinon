@@ -1,6 +1,6 @@
 {
   "name": "jest-sinon",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "main": "dist/jest-sinon.cjs.js",
   "module": "dist/jest-sinon.esm.js",
   "browser": "dist/jest-sinon.umd.js",
