@@ -93,3 +93,15 @@ export {
   default as toHaveAlwaysReturnedWith,
   default as toAlwaysReturnWith
 } from "./toHaveAlwaysReturnedWith";
+export {
+  default as toHaveThrown,
+  default as toHaveThrownError,
+  default as toThrow,
+  default as toThrowError
+} from "./toHaveThrown";
+export {
+  default as toHaveAlwaysThrown,
+  default as toHaveAlwaysThrownError,
+  default as toAlwaysThrow,
+  default as toAlwaysThrowError
+} from "./toHaveAlwaysThrown";
