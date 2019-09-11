@@ -1,4 +1,6 @@
 [![Build Status](https://travis-ci.com/djkf/jest-sinon.svg?branch=master)](https://travis-ci.com/djkf/jest-sinon)
+[![Known Vulnerabilities](https://snyk.io//test/github/djkf/jest-sinon/badge.svg?targetFile=packages/jest-sinon/package.json)](https://snyk.io//test/github/djkf/jest-sinon?targetFile=packages/jest-sinon/package.json)
+[![codecov](https://codecov.io/gh/djkf/jest-sinon/branch/master/graph/badge.svg)](https://codecov.io/gh/djkf/jest-sinon)
 
 # Jest-Sinon
 
