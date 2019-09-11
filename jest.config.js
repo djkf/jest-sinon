@@ -3,8 +3,8 @@ module.exports = {
   collectCoverage: true,
   verbose: true,
   collectCoverageFrom: [
-    "src/**/*.js",
+    "packages/*/src/**/*.js",
     "!<rootDir>/node_modules/",
-    "!src/**/index.js"
+    "!packages/*/src/**/index.js"
   ]
 };
