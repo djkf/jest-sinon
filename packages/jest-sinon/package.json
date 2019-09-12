@@ -1,10 +1,23 @@
 {
   "name": "jest-sinon",
   "version": "0.5.1",
+  "description": "Jest assertions for the mocking library Sinon.js",
   "main": "dist/jest-sinon.cjs.js",
   "module": "dist/jest-sinon.esm.js",
   "browser": "dist/jest-sinon.umd.js",
   "license": "MIT",
+  "keywords": [
+    "jest",
+    "sinon",
+    "mocks",
+    "spies",
+    "stubs",
+    "testing",
+    "test",
+    "assertions",
+    "matchers",
+    "tdd"
+  ],
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w"
@@ -13,7 +26,8 @@
     "dist"
   ],
   "peerDependencies": {
-    "sinon": ">=7.0.0 <8.0.0"
+    "sinon": ">=7.0.0",
+    "jest": ">=22.0.0"
   },
   "dependencies": {
     "expect": "^24.9.0",
