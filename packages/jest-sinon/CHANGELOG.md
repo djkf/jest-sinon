@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0](https://github.com/djkf/jest-sinon/compare/v0.5.2...v1.0.0) (2019-09-24)
+
+**Note:** Version bump only for package jest-sinon
+
 ## [0.5.2](https://github.com/djkf/jest-sinon/compare/v0.5.1...v0.5.2) (2019-09-12)
 
 **Note:** Version bump only for package jest-sinon
