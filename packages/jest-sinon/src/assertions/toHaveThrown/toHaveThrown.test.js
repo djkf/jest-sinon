@@ -78,3 +78,17 @@ describe("jestSpy.not.toHaveThrown", () => {
     expect(jestSpy).not.toHaveThrown();
   });
 });
+
+describe("fn.toHaveThrown", () => {
+  it("should pass if error thrown", () => {
+    expect(() => {
+      throw new Error("Error thrown");
+    }).toHaveThrown("Error thrown");
+  });
+});
+
+describe("fn.not.toHaveThrown", () => {
+  it("should fail if error not thrown", () => {
+    expect(() => {}).not.toHaveThrown("Error thrown");
+  });
+});

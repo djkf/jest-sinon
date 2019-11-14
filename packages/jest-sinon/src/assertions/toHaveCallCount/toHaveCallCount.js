@@ -1,5 +1,6 @@
 import { matcherHint, printExpected, printReceived } from "jest-matcher-utils";
 import spyMatchers from "expect/build/spyMatchers";
+import isSinonSpy from "../../helpers/isSinonSpy";
 
 const printPass = (expected, actual) => () =>
   `${matcherHint(".not.toHaveCallCount", "sinon.spy", "callCount")}\n\n` +
@@ -16,11 +17,11 @@ const printFail = (expected, actual) => () =>
   )} time(s)`;
 
 export default (actual, expected) => {
-  if (jest.isMockFunction(actual)) {
-    return spyMatchers.toHaveBeenCalledTimes(actual, expected);
+  if (isSinonSpy(actual)) {
+    return expected === actual.callCount
+      ? { pass: true, message: printPass(expected, actual) }
+      : { pass: false, message: printFail(expected, actual) };
   }
 
-  return expected === actual.callCount
-    ? { pass: true, message: printPass(expected, actual) }
-    : { pass: false, message: printFail(expected, actual) };
+  return spyMatchers.toHaveBeenCalledTimes(actual, expected);
 };
