@@ -1,5 +1,6 @@
 import { matcherHint, printExpected, printReceived } from "jest-matcher-utils";
 import toThrowMatchers from "expect/build/toThrowMatchers";
+import isSinonSpy from "../../helpers/isSinonSpy";
 
 const printPass = () => () =>
   `${matcherHint(".not.toHaveThrown", "sinon.spy", "TypeError | obj")}\n\n` +
@@ -12,14 +13,11 @@ const printFail = () => () =>
   `instead received a spy that has ${printReceived("not thrown an error")}`;
 
 export default (expected, errorObjOrErrorTypeStringOrNothing) => {
-  if (jest.isMockFunction(expected)) {
-    return toThrowMatchers.toThrow(
-      expected,
-      errorObjOrErrorTypeStringOrNothing
-    );
+  if (isSinonSpy(expected)) {
+    return expected.threw(errorObjOrErrorTypeStringOrNothing)
+      ? { pass: true, message: printPass() }
+      : { pass: false, message: printFail() };
   }
 
-  return expected.threw(errorObjOrErrorTypeStringOrNothing)
-    ? { pass: true, message: printPass() }
-    : { pass: false, message: printFail() };
+  return toThrowMatchers.toThrow(expected, errorObjOrErrorTypeStringOrNothing);
 };
