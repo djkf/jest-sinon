@@ -94,7 +94,7 @@ require("jest-sinon");
 
 #### `.toHaveBeenAlwaysCalledWith(args1, arg2, ...)`
 
-> Also under the alias: `.toBenAlwaysCalledWith()`
+> Also under the alias: `.toBeAlwaysCalledWith()`
 
 #### `.toHaveBeenAlwaysCalledWithExactly(args1, arg2, ...)`
 
