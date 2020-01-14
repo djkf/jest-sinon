@@ -1,6 +1,6 @@
 {
   "name": "jest-sinon",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Jest assertions for the mocking library Sinon.js",
   "main": "dist/jest-sinon.cjs.js",
   "module": "dist/jest-sinon.esm.js",
