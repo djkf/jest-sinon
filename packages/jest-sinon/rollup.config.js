@@ -6,17 +6,18 @@ import pkg from "./package.json";
 export default [
   {
     input: "src/index.js",
-    output: {
-      name: "jest-sinon",
-      file: pkg.browser,
-      format: "umd"
-    },
-    plugins: [resolve(), commonjs(), babel()]
-  },
-  {
-    input: "src/index.js",
-    external: ["jest-matcher-utils", "expect"],
-    plugins: [resolve(), commonjs(), babel()],
+    external: [
+      "jest-matcher-utils",
+      "expect/build/spyMatchers",
+      "expect/build/toThrowMatchers"
+    ],
+    plugins: [
+      resolve(),
+      commonjs(),
+      babel({
+        exclude: ["node_modules/**"]
+      })
+    ],
     output: [
       { file: pkg.main, format: "cjs" },
       { file: pkg.module, format: "es" }

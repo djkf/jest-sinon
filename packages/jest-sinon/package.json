@@ -4,7 +4,6 @@
   "description": "Jest assertions for the mocking library Sinon.js",
   "main": "dist/jest-sinon.cjs.js",
   "module": "dist/jest-sinon.esm.js",
-  "browser": "dist/jest-sinon.umd.js",
   "license": "MIT",
   "keywords": [
     "jest",
