@@ -29,8 +29,8 @@
     "sinon": ">=7.0.0"
   },
   "dependencies": {
-    "expect": "^24.9.0",
-    "jest-matcher-utils": "^24.9.0"
+    "expect": ">=22.0.0",
+    "jest-matcher-utils": ">=22.0.0"
   },
   "devDependencies": {
     "rollup": "^1.20.3",
