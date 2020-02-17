@@ -1,18 +1,47 @@
 {
-  "name": "jest-sinon-assertions",
-  "version": "0.1.0",
-  "description": "Jest assertions for sinon",
-  "author": "djkf <fox.darrel@googlemail.com>",
+  "name": "jest-sinon",
+  "version": "1.0.2",
+  "description": "Jest assertions for the mocking library Sinon.js",
+  "main": "dist/jest-sinon.cjs.js",
+  "module": "dist/jest-sinon.esm.js",
   "license": "MIT",
+  "keywords": [
+    "jest",
+    "sinon",
+    "mocks",
+    "spies",
+    "stubs",
+    "testing",
+    "test",
+    "assertions",
+    "matchers",
+    "tdd"
+  ],
   "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
     "test": "jest --coverage",
-    "lint": "eslint .",
-    "commit": "git-cz"
+    "lint": "eslint src",
+    "commit": "git-cz",
+    "semantic-release": "semantic-release"
+  },
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "jest": ">=22.0.0",
+    "sinon": ">=7.0.0"
+  },
+  "dependencies": {
+    "expect": ">=22.0.0",
+    "jest-matcher-utils": ">=22.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
+    "@semantic-release/changelog": "^5.0.0",
+    "@semantic-release/git": "^9.0.0",
     "babel-jest": "^24.9.0",
     "cz-conventional-changelog": "^3.0.2",
     "eslint": "^6.3.0",
@@ -23,12 +52,15 @@
     "eslint-plugin-prettier": "^3.1.0",
     "husky": ">=1",
     "jest": "^24.9.0",
-    "lerna": "3.16.4",
     "lint-staged": ">=8",
     "prettier": "1.18.2",
+    "rollup": "^1.20.3",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "semantic-release": "^17.0.4",
     "sinon": "^7.4.2"
   },
-  "private": true,
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
@@ -41,12 +73,13 @@
       "git add"
     ]
   },
-  "workspaces": [
-    "packages/*"
-  ],
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/djkf/jest-sinon.git"
   }
 }

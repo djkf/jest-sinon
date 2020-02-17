@@ -1,22 +1,38 @@
 language: node_js
 
 node_js:
-  - "10"
-
-branches:
-  only:
-    - master
+  - 12
+  - 10
+  - 8
 
 cache:
   yarn: true
   directories:
     - node_modules
-
 install:
   - yarn install --ignore-engines
-
 script:
   - yarn run lint
   - yarn test
+
+branches:
+  only:
+  - master
+  - next
+  - /^\d+\.(\d+|x)(\.x)?$/
+
+jobs:
+  include:
+    - stage: release
+      node_js: lts/*
+      script:
+        - yarn build
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script:
+          - npx semantic-release
+        on:
+          all_branches: true
 
 after_success: npx codecov
