@@ -15,12 +15,6 @@ script:
   - yarn run lint
   - yarn test
 
-branches:
-  only:
-    - master
-    - next
-    - /^\d+\.(\d+|x)(\.x)?$/
-
 jobs:
   include:
     - stage: release
@@ -32,5 +26,10 @@ jobs:
         skip_cleanup: true
         script:
           - npx semantic-release --dry-run
+        branches:
+          only:
+            - master
+            - next
+            - /^\d+\.(\d+|x)(\.x)?$/
 
 after_success: npx codecov
