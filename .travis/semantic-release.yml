@@ -16,3 +16,5 @@ jobs:
         skip_cleanup: true
         script:
           - npx semantic-release --dry-run
+        on:
+          all_branches: true
