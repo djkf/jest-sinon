@@ -1,6 +1,6 @@
 {
   "name": "jest-sinon",
-  "version": "1.0.2",
+  "version": "0.0.0-development",
   "description": "Jest assertions for the mocking library Sinon.js",
   "main": "dist/jest-sinon.cjs.js",
   "module": "dist/jest-sinon.esm.js",
@@ -40,8 +40,6 @@
     "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
-    "@semantic-release/changelog": "^5.0.0",
-    "@semantic-release/git": "^9.0.0",
     "babel-jest": "^24.9.0",
     "cz-conventional-changelog": "^3.0.2",
     "eslint": "^6.3.0",
