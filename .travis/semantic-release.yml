@@ -11,10 +11,4 @@ jobs:
       node_js: lts/*
       script:
         - yarn build
-      deploy:
-        provider: script
-        skip_cleanup: true
-        script:
-          - npx semantic-release --dry-run
-        on:
-          all_branches: true
+        - npx semantic-release
