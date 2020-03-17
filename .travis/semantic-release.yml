@@ -1,0 +1,15 @@
+branches:
+  only:
+    - master
+    - next
+    - beta
+    - /^\d+\.(\d+|x)(\.x)?$/
+  
+jobs:
+  include:
+    - stage: release
+      node_js: lts/*
+      script:
+        - yarn build
+        - npx semantic-release
+

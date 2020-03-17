@@ -1,0 +1,12 @@
+language: node_js
+
+cache:
+  yarn: true
+  directories:
+    - node_modules
+install:
+  - yarn install --ignore-engines
+script:
+  - yarn run lint
+  - yarn test
+
