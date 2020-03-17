@@ -12,4 +12,3 @@ jobs:
       script:
         - yarn build
         - npx semantic-release
-        
