@@ -1,26 +1,26 @@
-import resolve from "rollup-plugin-node-resolve";
-import commonjs from "rollup-plugin-commonjs";
-import babel from "rollup-plugin-babel";
-import pkg from "./package.json";
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+import babel from 'rollup-plugin-babel';
+import pkg from './package.json';
 
 export default [
   {
-    input: "src/index.js",
+    input: 'src/index.js',
     external: [
-      "jest-matcher-utils",
-      "expect/build/spyMatchers",
-      "expect/build/toThrowMatchers"
+      'jest-matcher-utils',
+      'expect/build/spyMatchers',
+      'expect/build/toThrowMatchers'
     ],
     plugins: [
       resolve(),
       commonjs(),
       babel({
-        exclude: ["node_modules/**"]
+        exclude: ['node_modules/**']
       })
     ],
     output: [
-      { file: pkg.main, format: "cjs" },
-      { file: pkg.module, format: "es" }
+      { file: pkg.main, format: 'cjs' },
+      { file: pkg.module, format: 'es' }
     ]
   }
 ];

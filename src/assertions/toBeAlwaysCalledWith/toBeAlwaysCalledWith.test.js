@@ -1,24 +1,24 @@
-import sinon from "sinon";
-import toBeAlwaysCalledWith from ".";
+import sinon from 'sinon';
+import toBeAlwaysCalledWith from '.';
 
 expect.extend({ toBeAlwaysCalledWith });
 
-const [a, b, c] = ["a", "b", "c"];
+const [a, b, c] = ['a', 'b', 'c'];
 
-describe("spy.toBeAlwaysCalledWith", () => {
+describe('spy.toBeAlwaysCalledWith', () => {
   const spy = sinon.spy();
 
   beforeEach(() => {
     spy.resetHistory();
   });
 
-  it("should pass if always called with correct args", () => {
+  it('should pass if always called with correct args', () => {
     spy(a, b, c);
 
     expect(spy).toBeAlwaysCalledWith(a, b, c);
   });
 
-  it("should fail if not always called with correct args", () => {
+  it('should fail if not always called with correct args', () => {
     spy(a);
     spy(a, b, c);
 
@@ -26,21 +26,21 @@ describe("spy.toBeAlwaysCalledWith", () => {
   });
 });
 
-describe("spy.not.toBeAlwaysCalledWith", () => {
+describe('spy.not.toBeAlwaysCalledWith', () => {
   const spy = sinon.spy();
 
   beforeEach(() => {
     spy.resetHistory();
   });
 
-  it("should pass if not always called with correct args", () => {
+  it('should pass if not always called with correct args', () => {
     spy(a);
     spy(a, b, c);
 
     expect(spy).not.toBeAlwaysCalledWith(a, b, c);
   });
 
-  it("should fail if always called with correct args", () => {
+  it('should fail if always called with correct args', () => {
     spy(a, b, c);
 
     expect(() => expect(spy).not.toBeAlwaysCalledWith(a, b, c)).toThrow();

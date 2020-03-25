@@ -1,9 +1,9 @@
-import sinon from "sinon";
-import toBeCalledOn from ".";
+import sinon from 'sinon';
+import toBeCalledOn from '.';
 
 expect.extend({ toBeCalledOn });
 
-describe("spy.toBeCalledOn", () => {
+describe('spy.toBeCalledOn', () => {
   const spy = sinon.spy();
   const obj = {};
 
@@ -11,20 +11,20 @@ describe("spy.toBeCalledOn", () => {
     spy.resetHistory();
   });
 
-  it("should pass if called on", () => {
+  it('should pass if called on', () => {
     spy.call(obj);
 
     expect(spy).toBeCalledOn(obj);
   });
 
-  it("should fail if not called on", () => {
+  it('should fail if not called on', () => {
     spy();
 
     expect(() => expect(spy).toBeCalledOn(obj)).toThrow();
   });
 });
 
-describe("spy.not.toBeCalledOn", () => {
+describe('spy.not.toBeCalledOn', () => {
   const spy = sinon.spy();
   const obj = {};
 
@@ -32,13 +32,13 @@ describe("spy.not.toBeCalledOn", () => {
     spy.resetHistory();
   });
 
-  it("should pass if not called on", () => {
+  it('should pass if not called on', () => {
     spy();
 
     expect(spy).not.toBeCalledOn(obj);
   });
 
-  it("should fail if called on", () => {
+  it('should fail if called on', () => {
     spy.call(obj);
 
     expect(() => expect(spy).not.toBeCalledOn(obj)).toThrow();

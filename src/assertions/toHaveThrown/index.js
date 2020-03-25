@@ -1,1 +1,1 @@
-export { default } from "./toHaveThrown";
+export { default } from './toHaveThrown';

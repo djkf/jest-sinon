@@ -1,5 +1,5 @@
-import sinon from "sinon";
-import toBeCalled from ".";
+import sinon from 'sinon';
+import toBeCalled from '.';
 
 expect.extend({ toBeCalled });
 
@@ -20,8 +20,7 @@ describe(`jest.fn().not.toBeCalled`, () => {
     expect(jestSpy).not.toBeCalled();
   });
 });
-
-["stub", "mock", "spy"].forEach(type => {
+['stub', 'mock', 'spy'].forEach((type) => {
   describe(`${type}.toBeCalled`, () => {
     const spy = sinon[type]();
 

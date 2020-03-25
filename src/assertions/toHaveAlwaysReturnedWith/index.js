@@ -1,1 +1,1 @@
-export { default } from "./toHaveAlwaysReturnedWith";
+export { default } from './toHaveAlwaysReturnedWith';

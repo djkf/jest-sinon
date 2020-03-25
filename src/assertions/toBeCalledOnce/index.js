@@ -1,1 +1,1 @@
-export { default } from "./toBeCalledOnce";
+export { default } from './toBeCalledOnce';

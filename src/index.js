@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import * as matchers from "./assertions";
+import * as matchers from './assertions';
 
 const jestExpect = global.expect;
 

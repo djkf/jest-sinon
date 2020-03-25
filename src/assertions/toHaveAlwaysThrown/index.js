@@ -1,1 +1,1 @@
-export { default } from "./toHaveAlwaysThrown";
+export { default } from './toHaveAlwaysThrown';

@@ -1,1 +1,1 @@
-export { default } from "./toBeAlwaysCalledWithExactly";
+export { default } from './toBeAlwaysCalledWithExactly';

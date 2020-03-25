@@ -32,8 +32,8 @@ const bar = jest.fn();
 foo();
 bar();
 
-expect(foo).toHaveBeenCalled(); // true
-expect(bar).toHaveBeenCalled(); // true
+expect(foo).toHaveBeenCalled(); // pass
+expect(bar).toHaveBeenCalled(); // pass
 ```
 
 ## Why?
@@ -83,110 +83,177 @@ Add `Jest-Sinon` to your Jest `setupFilesAfterEnv` configuration.
 ```js
 // testSetup.js
 
-require("jest-sinon");
+require('jest-sinon');
 ```
 
 ## Usage
 
-`Jest-Sinon` adds a number of assertions to help test `Sinon.js` Spies, Mocks and Stubs. Below is a list of currently implemented assertions.
+`Jest-Sinon` adds a number of assertions to help test `Sinon` Spies, Mocks and Stubs. Below is a list of currently implemented assertions.
 
-#### `.toHaveBeenAlwaysCalledOn(obj)`
+### .toHaveBeenAlwaysCalledOn(obj)
 
 > Also under the alias: `.toBeAlwaysCalledOn()`
 
-#### `.toHaveBeenAlwaysCalledWith(args1, arg2, ...)`
+Passes if **spy** was always called with `obj` as its `this` value.
+
+```js
+import sinon from 'sinon';
+
+const spy = sinon.spy();
+const obj = {};
+
+spy.call(obj);
+
+expect(spy).toBeAlwaysCalledOn(obj);
+```
+
+---
+
+### .toHaveBeenAlwaysCalledWith(args1, arg2, ...)
 
 > Also under the alias: `.toBeAlwaysCalledWith()`
 
-#### `.toHaveBeenAlwaysCalledWithExactly(args1, arg2, ...)`
+Passes if **spy** was always called with the provided arguments.
+
+```js
+import sinon from 'sinon';
+
+const spy = sinon.spy();
+
+spy('foo');
+spy('foo', 'bar');
+
+expect(spy).toBeAlwaysCalledWith('foo');
+```
+
+---
+
+### .toHaveBeenAlwaysCalledWithExactly(args1, arg2, ...)
 
 > Also under the alias: `.toBeAlwaysCalledWithExactly()`
 
-#### `.toHaveBeenAlwaysCalledWithMatch(arg1, arg2, ...)`
+Passes if **spy** was always called with the exact provided arguments.
+
+```js
+import sinon from 'sinon';
+
+const spy = sinon.spy();
+
+spy('foo', 'bar');
+spy('foo', 'bar');
+
+expect(spy).toBeAlwaysCalledWithExactly('foo', 'bar');
+```
+
+### .toHaveBeenAlwaysCalledWithMatch(arg1, arg2, ...)
 
 > Also under the alias: `.toBeAlwaysCalledWithMatch()`
 
-#### `.toHaveBeenAlwaysCalledWithNew()`
+Passes if spy was always called with matching arguments.
+
+This behaves the same as
+
+```js
+expect(spy)
+  .toBeAlwaysCalledWith(sinon.match(arg1), sinon.match(arg2), ...)
+```
+
+```js
+import sinon from 'sinon';
+
+const spy = sinon.spy();
+
+spy({ foo: 'bar' });
+spy({ foo: 'bar' });
+
+expect(spy).toBeAlwaysCalledWithMatch({ foo: 'bar' });
+```
+
+### .toHaveBeenAlwaysCalledWithNew()
 
 > Also under the alias: `.toBeAlwaysCalledWithNew()`
 
-#### `.toHaveBeenCalled()`
+Passes if spy/stub was called with the new operator.
+
+> Beware that this is inferred based on the value of the this object and the spy function’s prototype, so it may give false positives if you actively return the right kind of object.
+
+### .toHaveBeenCalled()
 
 > Also under the alias: `.toBeCalled()`
 
-#### `.toHaveBeenCalledAfter(anotherSpy)`
+### .toHaveBeenCalledAfter(anotherSpy)
 
 > Also under the alias: `.toBeCalledAfter()`
 
-#### `.toHaveBeenCalledBefore(anotherSpy)`
+### .toHaveBeenCalledBefore(anotherSpy)
 
 > Also under the alias: `.toBeCalledBefore()`
 
-#### `.toHaveBeenCalledImmediatelyAfter(anotherSpy)`
+### .toHaveBeenCalledImmediatelyAfter(anotherSpy)
 
 > Also under the alias: `.toBeCalledImmediatelyAfter()`
 
-#### `.toHaveBeenCalledImmediatelyBefore(anotherSpy)`
+### .toHaveBeenCalledImmediatelyBefore(anotherSpy)
 
 > Also under the alias: `.toBeCalledImmediatelyBefore()`
 
-#### `.toHaveBeenCalledOn(obj)`
+### .toHaveBeenCalledOn(obj)
 
 > Also under the alias: `.toBeCalledOn()`
 
-#### `.toHaveBeenCalledOnce()`
+### .toHaveBeenCalledOnce()
 
 > Also under the alias: `.toBeCalledOnce()`
 
-#### `.toHaveBeenCalledOnceWith(arg1, arg2, ...)`
+### .toHaveBeenCalledOnceWith(arg1, arg2, ...)
 
 > Also under the alias: `.toBeCalledOnceWith()`
 
-#### `.toHaveBeenCalledOnceWithExactly(arg1, arg2, ...)`
+### .toHaveBeenCalledOnceWithExactly(arg1, arg2, ...)
 
 > Also under the alias: `.toBeCalledOnceWithExactly()`
 
-#### `.toHaveBeenCalledThrice()`
+### .toHaveBeenCalledThrice()
 
 > Also under the alias: `.toBeCalledThrice()`
 
-#### `.toHaveBeenCalledTwice()`
+### .toHaveBeenCalledTwice()
 
 > Also under the alias: `.toBeCalledTwice()`
 
-#### `.toHaveBeenCalledWith(arg1, arg2, ...)`
+### .toHaveBeenCalledWith(arg1, arg2, ...)
 
 > Also under the alias: `.toBeCalledWith()`
 
-#### `.toHaveBeenCalledWithExactly(arg1, arg2, ...)`
+### .toHaveBeenCalledWithExactly(arg1, arg2, ...)
 
 > Also under the alias: `.toBeCalledWithExactly()`
 
-#### `.toHaveBeenCalledWithMatch(arg1, arg2, ...)`
+### .toHaveBeenCalledWithMatch(arg1, arg2, ...)
 
 > Also under the alias: `.toBeCalledWithMatch()`
 
-#### `.toHaveBeenCalledWithNew()`
+### .toHaveBeenCalledWithNew()
 
 > Also under the alias: `.toBeCalledWithNew()`
 
-#### `.toHaveCallCount(number)`
+### .toHaveCallCount(number)
 
 > Also under the alias: `.toHaveBeenCalledTimes()` and `.toBeCalledTimes()`
 
-#### `.toHaveReturnedWith(obj)`
+### .toHaveReturnedWith(obj)
 
 > Also under the alias: `.toReturnWith()`, `.toHaveReturned()` and `.toReturn()`
 
-#### `.toHaveAlwaysReturnedWith(obj)`
+### .toHaveAlwaysReturnedWith(obj)
 
 > Also under the alias: `.toAlwaysReturnWith()`
 
-#### `.toHaveThrown(error?)`
+### .toHaveThrown(error?)
 
 > Also under the alias: `.toHaveThrownError()`, `.toThrow()`, and `.toThrowError()`
 
-#### `.toHaveAlwaysThrown(error?)`
+### .toHaveAlwaysThrown(error?)
 
 > Also under the alias: `.toHaveAlwaysThrownError()`, `.toAlwaysThrow()` and `.toAlwaysThrowError()`
 
