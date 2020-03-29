@@ -1,9 +1,9 @@
-import sinon from "sinon";
-import toBeAlwaysCalledOn from ".";
+import sinon from 'sinon';
+import toBeAlwaysCalledOn from '.';
 
 expect.extend({ toBeAlwaysCalledOn });
 
-describe("spy.toBeAlwaysCalledOn", () => {
+describe('spy.toBeAlwaysCalledOn', () => {
   const spy = sinon.spy();
   const obj = {};
 
@@ -11,13 +11,13 @@ describe("spy.toBeAlwaysCalledOn", () => {
     spy.resetHistory();
   });
 
-  it("should pass if always called on", () => {
+  it('should pass if always called on', () => {
     spy.call(obj);
 
     expect(spy).toBeAlwaysCalledOn(obj);
   });
 
-  it("should fail if not always called on", () => {
+  it('should fail if not always called on', () => {
     spy();
     spy.call(obj);
 
@@ -25,7 +25,7 @@ describe("spy.toBeAlwaysCalledOn", () => {
   });
 });
 
-describe("spy.not.toBeAlwaysCalledOn", () => {
+describe('spy.not.toBeAlwaysCalledOn', () => {
   const spy = sinon.spy();
   const obj = {};
 
@@ -33,14 +33,14 @@ describe("spy.not.toBeAlwaysCalledOn", () => {
     spy.resetHistory();
   });
 
-  it("should pass if not called on", () => {
+  it('should pass if not called on', () => {
     spy();
     spy.call(obj);
 
     expect(spy).not.toBeAlwaysCalledOn(obj);
   });
 
-  it("should fail if called on", () => {
+  it('should fail if called on', () => {
     spy.call(obj);
 
     expect(() => expect(spy).not.toBeAlwaysCalledOn(obj)).toThrow();

@@ -1,12 +1,12 @@
-import sinon from "sinon";
-import toHaveAlwaysThrown from ".";
+import sinon from 'sinon';
+import toHaveAlwaysThrown from '.';
 
 expect.extend({ toHaveAlwaysThrown });
 
-describe("spy.toHaveAlwaysThrown", () => {
-  const throwSpy = sinon.spy(throwError => {
+describe('spy.toHaveAlwaysThrown', () => {
+  const throwSpy = sinon.spy((throwError) => {
     if (throwError) {
-      throw Error("error");
+      throw Error('error');
     }
   });
 
@@ -14,7 +14,7 @@ describe("spy.toHaveAlwaysThrown", () => {
     throwSpy.resetHistory();
   });
 
-  it("should pass if error always thrown", () => {
+  it('should pass if error always thrown', () => {
     try {
       throwSpy(true);
       throwSpy(true);
@@ -23,7 +23,7 @@ describe("spy.toHaveAlwaysThrown", () => {
     }
   });
 
-  it("should fail if error is not always thrown", () => {
+  it('should fail if error is not always thrown', () => {
     throwSpy(false);
     try {
       throwSpy(true);
@@ -33,8 +33,8 @@ describe("spy.toHaveAlwaysThrown", () => {
   });
 });
 
-describe("spy.not.toHaveAlwaysThrown", () => {
-  const throwSpy = sinon.spy(throwError => {
+describe('spy.not.toHaveAlwaysThrown', () => {
+  const throwSpy = sinon.spy((throwError) => {
     if (throwError) {
       throw new Error();
     }
@@ -44,7 +44,7 @@ describe("spy.not.toHaveAlwaysThrown", () => {
     throwSpy.resetHistory();
   });
 
-  it("should pass if error is not always thrown", () => {
+  it('should pass if error is not always thrown', () => {
     throwSpy(false);
     try {
       throwSpy(true);
@@ -53,7 +53,7 @@ describe("spy.not.toHaveAlwaysThrown", () => {
     }
   });
 
-  it("should fail if error always thrown", () => {
+  it('should fail if error always thrown', () => {
     try {
       throwSpy(true);
       throwSpy(true);

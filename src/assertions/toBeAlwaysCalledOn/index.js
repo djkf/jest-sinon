@@ -1,1 +1,1 @@
-export { default } from "./toBeAlwaysCalledOn";
+export { default } from './toBeAlwaysCalledOn';

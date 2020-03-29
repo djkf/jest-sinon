@@ -1,39 +1,39 @@
-import sinon from "sinon";
-import toBeCalledTwice from ".";
+import sinon from 'sinon';
+import toBeCalledTwice from '.';
 
 expect.extend({ toBeCalledTwice });
 
-describe("spy.toBeCalledTwice", () => {
+describe('spy.toBeCalledTwice', () => {
   const spy = sinon.spy();
 
   beforeEach(() => {
     spy.resetHistory();
   });
 
-  it("should pass if called the correct number of times", () => {
+  it('should pass if called the correct number of times', () => {
     spy();
     spy();
 
     expect(spy).toBeCalledTwice();
   });
 
-  it("should fail if called the incorrect number of times", () => {
+  it('should fail if called the incorrect number of times', () => {
     expect(() => expect(spy).toBeCalledTwice()).toThrow();
   });
 });
 
-describe("spy.not.toBeCalledTwice", () => {
+describe('spy.not.toBeCalledTwice', () => {
   const spy = sinon.spy();
 
   beforeEach(() => {
     spy.resetHistory();
   });
 
-  it("should pass if called the incorrect number of times", () => {
+  it('should pass if called the incorrect number of times', () => {
     expect(spy).not.toBeCalledTwice();
   });
 
-  it("should fail if called the correct number of times", () => {
+  it('should fail if called the correct number of times', () => {
     spy();
     spy();
 

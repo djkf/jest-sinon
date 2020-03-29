@@ -1,23 +1,23 @@
 /* eslint-disable new-cap, no-new */
-import sinon from "sinon";
-import toBeAlwaysCalledWithNew from ".";
+import sinon from 'sinon';
+import toBeAlwaysCalledWithNew from '.';
 
 expect.extend({ toBeAlwaysCalledWithNew });
 
-describe("spy.toBeAlwaysCalledWithNew", () => {
+describe('spy.toBeAlwaysCalledWithNew', () => {
   const spy = sinon.spy();
 
   beforeEach(() => {
     spy.resetHistory();
   });
 
-  it("should pass if always called with new", () => {
+  it('should pass if always called with new', () => {
     new spy();
 
     expect(spy).toBeAlwaysCalledWithNew();
   });
 
-  it("should fail if not always called with new", () => {
+  it('should fail if not always called with new', () => {
     new spy();
     spy();
 
@@ -25,21 +25,21 @@ describe("spy.toBeAlwaysCalledWithNew", () => {
   });
 });
 
-describe("spy.not.toBeAlwaysCalledWithNew", () => {
+describe('spy.not.toBeAlwaysCalledWithNew', () => {
   const spy = sinon.spy();
 
   beforeEach(() => {
     spy.resetHistory();
   });
 
-  it("should pass if not always called with new", () => {
+  it('should pass if not always called with new', () => {
     spy();
     new spy();
 
     expect(spy).not.toBeAlwaysCalledWithNew();
   });
 
-  it("should fail if always called with new", () => {
+  it('should fail if always called with new', () => {
     new spy();
     new spy();
 

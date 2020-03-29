@@ -83,7 +83,7 @@ Add `Jest-Sinon` to your Jest `setupFilesAfterEnv` configuration.
 ```js
 // testSetup.js
 
-require("jest-sinon");
+require('jest-sinon');
 ```
 
 ## Usage

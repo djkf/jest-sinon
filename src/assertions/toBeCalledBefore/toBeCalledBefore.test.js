@@ -1,9 +1,9 @@
-import sinon from "sinon";
-import toBeCalledBefore from ".";
+import sinon from 'sinon';
+import toBeCalledBefore from '.';
 
 expect.extend({ toBeCalledBefore });
 
-describe("spy.toBeCalledBefore", () => {
+describe('spy.toBeCalledBefore', () => {
   const beforeSpy = sinon.spy();
   const afterSpy = sinon.spy();
 
@@ -12,14 +12,14 @@ describe("spy.toBeCalledBefore", () => {
     afterSpy.resetHistory();
   });
 
-  it("should pass if spies are called in order", () => {
+  it('should pass if spies are called in order', () => {
     beforeSpy();
     afterSpy();
 
     expect(beforeSpy).toBeCalledBefore(afterSpy);
   });
 
-  it("should fail if spies are called out of order", () => {
+  it('should fail if spies are called out of order', () => {
     afterSpy();
     beforeSpy();
 
@@ -27,7 +27,7 @@ describe("spy.toBeCalledBefore", () => {
   });
 });
 
-describe("spy.not.toBeCalledBefore", () => {
+describe('spy.not.toBeCalledBefore', () => {
   const beforeSpy = sinon.spy();
   const afterSpy = sinon.spy();
 
@@ -36,14 +36,14 @@ describe("spy.not.toBeCalledBefore", () => {
     afterSpy.resetHistory();
   });
 
-  it("should pass if spies are called out of order", () => {
+  it('should pass if spies are called out of order', () => {
     afterSpy();
     beforeSpy();
 
     expect(beforeSpy).not.toBeCalledBefore(afterSpy);
   });
 
-  it("should fail if spies are called in order", () => {
+  it('should fail if spies are called in order', () => {
     beforeSpy();
     afterSpy();
 

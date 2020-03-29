@@ -1,1 +1,1 @@
-export { default } from "./toBeAlwaysCalledWithMatch";
+export { default } from './toBeAlwaysCalledWithMatch';

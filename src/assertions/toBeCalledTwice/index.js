@@ -1,1 +1,1 @@
-export { default } from "./toBeCalledTwice";
+export { default } from './toBeCalledTwice';

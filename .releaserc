@@ -3,11 +3,11 @@
     [
       "@semantic-release/commit-analyzer",
       {
-        "preset": "angular",
+        "preset": "conventionalcommits",
         "releaseRules": [
           {
             "type": "docs",
-            "scope": "README",
+            "scope": "readme",
             "release": "patch"
           },
           {
@@ -17,16 +17,73 @@
         ]
       }
     ],
-    "@semantic-release/release-notes-generator",
     [
-      "@semantic-release/changelog",
+      "@semantic-release/release-notes-generator",
       {
-        "changelogFile": "CHANGELOG.md"
+        "preset": "conventionalcommits",
+        "parserOpts": {
+          "noteKeywords": [
+            "BREAKING CHANGE",
+            "BREAKING CHANGES",
+            "BREAKING"
+          ]
+        },
+        "writerOpts": {
+          "commitsSort": [
+            "subject",
+            "scope"
+          ]
+        },
+        "presetConfig": {
+          "types": [
+            {
+              "type": "feat",
+              "section": "Features"
+            },
+            {
+              "type": "fix",
+              "section": "Bug Fixes"
+            },
+            {
+              "type": "chore",
+              "hidden": true
+            },
+            {
+              "type": "docs",
+              "section": "Documentation"
+            },
+            {
+              "type": "style",
+              "hidden": true
+            },
+            {
+              "type": "refactor",
+              "section": "Refactor"
+            },
+            {
+              "type": "perf",
+              "hidden": true
+            },
+            {
+              "type": "test",
+              "hidden": true
+            },
+            {
+              "type": "ci",
+              "hidden": true
+            },
+            {
+              "type": "build",
+              "hidden": true
+            }
+          ]
+        }
       }
     ],
+    "@semantic-release/changelog",
     "@semantic-release/npm",
     [
-      "@semantic-release/github",
+      "@semantic-release/git",
       {
         "assets": [
           "CHANGELOG.md"
