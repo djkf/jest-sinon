@@ -1,7 +1,4 @@
 import sinon from 'sinon';
-import toBeCalledWithExactly from '.';
-
-expect.extend({ toBeCalledWithExactly });
 
 const [a, b, c] = ['a', 'b', 'c'];
 

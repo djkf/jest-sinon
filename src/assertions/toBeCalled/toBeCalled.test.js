@@ -1,7 +1,4 @@
 import sinon from 'sinon';
-import toBeCalled from '.';
-
-expect.extend({ toBeCalled });
 
 describe(`jest.fn().toBeCalled`, () => {
   it(`should pass if passed a called jest.fn()`, () => {

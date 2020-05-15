@@ -1,7 +1,4 @@
 import sinon from 'sinon';
-import toHaveCallCount from '.';
-
-expect.extend({ toHaveCallCount });
 
 describe('spy.toHaveCallCount', () => {
   const spy = sinon.spy();

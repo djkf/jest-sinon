@@ -11,16 +11,17 @@ Jest-Sinon is a collection of assertions for using the mocking library Sinon.js 
 ### Example
 
 ```js
-const bar = () => {};
 const foo = sinon.spy();
 
-foo(bar);
+foo('bar');
 
 // instead of:
-expect(foo.calledWith(bar)).toBeTruthy;
+expect(foo.calledWith('bar')).toBeTruthy;
+// or
+sinon.assert.calledWith(foo, 'bar');
 
 // we can write:
-expect(foo).toHaveBeenCalledWith(bar);
+expect(foo).toHaveBeenCalledWith('bar');
 ```
 
 The assertions: `toHaveBeenCalledTimes`, `toThrow`, `toReturnWith`, `toHaveBeenCalled` and `toHaveBeenCalledWith` clash with the in-built `Jest` mocking framework. `Jest-Sinon` will try and detect which type of spy is being used and use the correct assertion. You should be able to use both mocking libraries in parallel.
@@ -59,6 +60,8 @@ With yarn:
 ```
 yarn add -D jest-sinon
 ```
+
+It's assumed both `jest` and `sinon` have been added to the project as dependencies.
 
 ## Setup
 

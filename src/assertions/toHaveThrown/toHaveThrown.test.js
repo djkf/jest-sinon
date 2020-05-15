@@ -1,7 +1,4 @@
 import sinon from 'sinon';
-import toHaveThrown from '.';
-
-expect.extend({ toHaveThrown });
 
 describe('spy.toHaveThrown', () => {
   const throwSpy = sinon.spy(() => {
