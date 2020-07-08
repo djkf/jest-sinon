@@ -1,7 +1,4 @@
 import sinon from 'sinon';
-import toHaveAlwaysThrown from '.';
-
-expect.extend({ toHaveAlwaysThrown });
 
 describe('spy.toHaveAlwaysThrown', () => {
   const throwSpy = sinon.spy((throwError) => {

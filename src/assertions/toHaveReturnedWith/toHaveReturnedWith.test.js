@@ -1,7 +1,4 @@
 import sinon from 'sinon';
-import toHaveReturnedWith from '.';
-
-expect.extend({ toHaveReturnedWith });
 
 describe('spy.toHaveReturnedWith', () => {
   const returnSpy = sinon.spy(() => true);

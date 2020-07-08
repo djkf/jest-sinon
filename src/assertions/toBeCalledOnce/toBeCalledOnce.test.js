@@ -1,7 +1,4 @@
 import sinon from 'sinon';
-import toBeCalledOnce from '.';
-
-expect.extend({ toBeCalledOnce });
 
 describe('spy.toBeCalledOnce', () => {
   const spy = sinon.spy();

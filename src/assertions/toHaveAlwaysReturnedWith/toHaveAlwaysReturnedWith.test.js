@@ -1,8 +1,5 @@
 /* eslint-disable no-param-reassign, no-plusplus */
 import sinon from 'sinon';
-import toHaveAlwaysReturnedWith from '.';
-
-expect.extend({ toHaveAlwaysReturnedWith });
 
 const impureFn = () => new Date();
 const pureFn = () => true;

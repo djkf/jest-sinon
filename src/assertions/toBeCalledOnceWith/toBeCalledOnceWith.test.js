@@ -1,7 +1,4 @@
 import sinon from 'sinon';
-import toBeCalledOnceWith from '.';
-
-expect.extend({ toBeCalledOnceWith });
 
 const [a, b, c] = ['a', 'b', 'c'];
 

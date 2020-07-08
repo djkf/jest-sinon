@@ -1,7 +1,4 @@
 import sinon from 'sinon';
-import toBeAlwaysCalledWithMatch from '.';
-
-expect.extend({ toBeAlwaysCalledWithMatch });
 
 const foo = {
   bar: 42,

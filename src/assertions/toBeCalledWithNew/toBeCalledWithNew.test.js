@@ -1,8 +1,5 @@
 /* eslint-disable new-cap, no-new */
 import sinon from 'sinon';
-import toBeCalledWithNew from '.';
-
-expect.extend({ toBeCalledWithNew });
 
 describe('spy.toBeCalledWithNew', () => {
   const spy = sinon.spy();
