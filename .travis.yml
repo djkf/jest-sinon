@@ -1,11 +1,23 @@
-version: ~> 1.0
+language: node_js
 
-services:
-  - docker
+node_js:
+  - 16
+  - 14
+  - 12
 
-import:
-  - .travis/node.yml
-  - .travis/node-versions.yml
-  - .travis/semantic-release.yml
-  - .travis/codecov.yml
+cache:
+  directories:
+    - node_modules
 
+script:
+- npm run lint
+- npm test
+- npx codecov
+
+deploy:
+  provider: npm
+  email: "$NPM_EMAIL"
+  api_key: "$NPM_TOKEN"
+  skip_cleanup: true
+  on:
+    tags: true

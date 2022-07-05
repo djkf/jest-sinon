@@ -1,5 +1,5 @@
 import { matcherHint, printExpected, printReceived } from 'jest-matcher-utils';
-import spyMatchers from 'expect/build/spyMatchers';
+import spyMatchers from '../../helpers/spyMatchers';
 import isSinonSpy from '../../helpers/isSinonSpy';
 
 const printPass = (expected, actual) => () =>

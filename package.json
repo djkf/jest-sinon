@@ -21,19 +21,17 @@
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "test": "jest --coverage",
-    "lint": "eslint src",
-    "commit": "git-cz",
-    "semantic-release": "semantic-release"
+    "lint": "eslint src"
   },
   "files": [
     "dist"
   ],
   "peerDependencies": {
-    "jest": ">=22.0.0",
+    "jest": ">=24.0.0",
     "sinon": ">=7.0.0"
   },
   "dependencies": {
-    "expect": ">=22.0.0",
+    "@jest/expect": "^28.1.1",
     "jest-matcher-utils": ">=22.0.0"
   },
   "devDependencies": {
@@ -42,11 +40,7 @@
     "@babel/preset-env": "^7.8.7",
     "@rollup/plugin-commonjs": "^11.0.2",
     "@rollup/plugin-node-resolve": "^7.1.1",
-    "@semantic-release/changelog": "^5.0.0",
-    "@semantic-release/git": "^9.0.0",
     "babel-jest": "^25.1.0",
-    "conventional-changelog-conventionalcommits": "^4.2.3",
-    "cz-conventional-changelog": "^3.0.2",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-config-prettier": "^6.2.0",
@@ -54,12 +48,11 @@
     "eslint-plugin-jest": "^23.8.2",
     "eslint-plugin-prettier": "^3.1.0",
     "husky": ">=1",
-    "jest": "^25.1.0",
+    "jest": "^28.1.1",
     "lint-staged": ">=8",
     "prettier": "^2.0.0",
     "rollup": "^2.2.0",
     "rollup-plugin-babel": "^4.3.3",
-    "semantic-release": "^17.0.4",
     "sinon": "^9.0.1"
   },
   "husky": {
@@ -73,11 +66,6 @@
       "prettier --write",
       "git add"
     ]
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
   },
   "repository": {
     "type": "git",
