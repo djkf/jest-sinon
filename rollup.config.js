@@ -3,18 +3,6 @@ import commonjs from '@rollup/plugin-commonjs';
 import babel from 'rollup-plugin-babel';
 import pkg from './package.json';
 
-function fixLocalImport() {
-  return {
-    name: 'fix-local-import',
-    resolveId(source, importer) {
-      if (source.startsWith('/Users')) {
-        return source;
-      }
-      return null;
-    },
-  };
-}
-
 export default [
   {
     input: 'src/index.js',
@@ -28,8 +16,7 @@ export default [
       commonjs(),
       babel({
         exclude: ['node_modules/**']
-      }),
-      fixLocalImport(),
+      })
     ],
     output: [
       { file: pkg.main, format: 'cjs' },
