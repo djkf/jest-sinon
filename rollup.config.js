@@ -7,16 +7,14 @@ export default [
   {
     input: 'src/index.js',
     external: [
-      'jest-matcher-utils',
-      'expect/build/spyMatchers',
-      'expect/build/toThrowMatchers'
+      'jest-matcher-utils'
     ],
     plugins: [
       resolve(),
       commonjs(),
       babel({
         exclude: ['node_modules/**']
-      })
+      }),
     ],
     output: [
       { file: pkg.main, format: 'cjs' },
