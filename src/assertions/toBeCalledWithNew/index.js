@@ -1,1 +1,3 @@
-export { default } from './toBeCalledWithNew';
+import assertion from './toBeCalledWithNew';
+
+export default assertion;

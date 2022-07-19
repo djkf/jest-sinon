@@ -1,1 +1,3 @@
-export { default } from './toHaveAlwaysReturnedWith';
+import assertion from './toHaveAlwaysReturnedWith';
+
+export default assertion;

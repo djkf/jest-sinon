@@ -1,1 +1,3 @@
-export { default } from './toBeCalledOn';
+import assertion from './toBeCalledOn';
+
+export default assertion;

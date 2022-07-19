@@ -1,1 +1,3 @@
-export { default } from './toHaveThrown';
+import assertion from './toHaveThrown';
+
+export default assertion;

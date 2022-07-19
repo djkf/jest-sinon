@@ -1,1 +1,3 @@
-export { default } from './toBeCalledTwice';
+import assertion from './toBeCalledTwice';
+
+export default assertion;

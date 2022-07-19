@@ -1,1 +1,3 @@
-export { default } from './toHaveCallCount';
+import assertion from './toHaveCallCount';
+
+export default assertion;

@@ -1,1 +1,3 @@
-export { default } from './toBeCalledOnceWithExactly';
+import assertion from './toBeCalledOnceWithExactly';
+
+export default assertion;
