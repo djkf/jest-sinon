@@ -1,8 +1,6 @@
 [![NPM version](https://img.shields.io/npm/v/jest-sinon.svg)](https://www.npmjs.com/package/jest-sinon)
 [![Downloads](https://img.shields.io/npm/dm/jest-sinon.svg)](https://www.npmjs.com/package/jest-sinon)
-[![Build Status](https://travis-ci.com/djkf/jest-sinon.svg?branch=master)](https://travis-ci.com/djkf/jest-sinon)
 [![Known Vulnerabilities](https://snyk.io//test/github/djkf/jest-sinon/badge.svg?targetFile=package.json)](https://snyk.io//test/github/djkf/jest-sinon?targetFile=package.json)
-[![codecov](https://codecov.io/gh/djkf/jest-sinon/branch/master/graph/badge.svg)](https://codecov.io/gh/djkf/jest-sinon)
 
 # Jest-Sinon
 
