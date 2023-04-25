@@ -84,6 +84,16 @@ Add `Jest-Sinon` to your Jest `setupFilesAfterEnv` configuration.
 require('jest-sinon');
 ```
 
+### @playwright/test
+
+```js
+const assertions = require('jest-sinon/assertions');
+// Or
+import * as assertions from 'jest-sinon/assertions';
+
+expect.extend(assertions);
+```
+
 ## Usage
 
 `Jest-Sinon` adds a number of assertions to help test `Sinon.js` Spies, Mocks and Stubs. Below is a list of currently implemented assertions.

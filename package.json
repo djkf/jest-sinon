@@ -2,8 +2,18 @@
   "name": "jest-sinon",
   "version": "1.1.0",
   "description": "Jest assertions for the mocking library Sinon.js",
-  "main": "dist/jest-sinon.cjs.js",
-  "module": "dist/jest-sinon.esm.js",
+  "main": "./dist/cjs/jest-sinon.js",
+  "module": "./dist/esm/jest-sinon.mjs",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/jest-sinon.mjs",
+      "require": "./dist/cjs/jest-sinon.js"
+    },
+    "./assertions": {
+      "import": "./dist/esm/assertions.mjs",
+      "require": "./dist/cjs/assertions.js"
+    }
+  },
   "license": "MIT",
   "keywords": [
     "jest",
